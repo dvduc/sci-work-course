@@ -1,23 +1,99 @@
 \documentclass{article}
-
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{algorithmic}
+\usepackage{listings}
 \bibliographystyle{alpha}
 
 \begin{document}
 
-\title{My Title}
-\author{My Name}
+\title{My Title} 
+\author{My Name} 
+\date{31.06.2018}
 \maketitle
 
-\begin{abstract}
-This paper goes about.
-Test 123
-\end{abstract}
+\tableofcontents
+\newpage
 
-\section{Section 1}
-Here we write a lot of text about our smart ideas.
+\section{Introduction}
+
+\begin{figure}[ht]
+	\centering
+		%\includegraphics[width=0.8\textwidth]{minion}
+		\includegraphics[width=0.5\textwidth]{pics/minion.png}
+		\caption{Minion}
+		\label{fig: minion}
+\end{figure}
+
+
+
+\begin{table}
+\centering
+ \begin{tabular}{r|l|r} 
+ Name & Department & Salary \\ \hline
+John Connor & Customer Service & 10'000 \\
+Brain & R\&D & 50'000  \\
+Malcolm & Management & 200'000\\ \hline
+
+\end{tabular}	
+\caption{The employees with their salaries from company XY}
+\label{tab: salary}
+\end{table}
+
+
+Hallo biblio \cite{krishnan_data_2013} und \cite{yu_networking_2016}.
+
+\hyperref[label_name]{Figure \ref*{fig: minion}}
+
+\hyperref[table_name]{Table \ref*{tab: salary}}
+
+
+\section{Document with an pseudo-code}
+
+\begin{algorithmic} \IF {$i\geq 10$}
+   \STATE $k\gets 0$
+\ELSE
+\STATE $k\gets 10$ \ENDIF
+\end{algorithmic}
+
+\section{Document with Java Code}
+
+\begin{lstlisting}[language=Java,frame=single] 
+public class HelloWorld
+{
+	public static void main (String[] args) {
+             // Ausgabe Hello World!
+             System.out.println("Hello World!");
+	} 
+}
+\end{lstlisting}
+
+
+\section{Theoretical Background}
+\subsection{Statistical Theory}
+
+The real function $f$ on $D$ is continuous in the point of $x \in D$, if for every $\epsilon  \textrm{}>  0 $  there exists $\delta > 0$ such that 
+
+\begin{equation}
+   \forall y \in D \textrm{ with } \vert x - y  \vert < \delta \Rightarrow \vert f(x) - f(y) \vert < \textrm{} \epsilon
+   \label{eq:equ}
+\end{equation} 
+
+%\title{My Title}
+%\author{My Name}
+%\maketitle
+
+%\begin{abstract}
+%This paper goes about.
+%Test 123
+%\end{abstract}
+
+%\section{Section 1}
+%Here we write a lot of text about our smart ideas.
 %comments are possible
-\cite{Eckert2007}
+%\cite{Eckert2007}
 
-\bibliography{references}
-
+%\bibliography{references}
+\listoffigures
+\bibliography{Sci-work.bib}
 \end{document}
